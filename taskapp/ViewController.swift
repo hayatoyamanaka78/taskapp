@@ -34,10 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchBar.showsCancelButton = true
         //プレースホルダの指定
         searchBar.placeholder = "検索文字列を入力してください"
-        //検索スコープを指定するボタン
-        searchBar.scopeButtonTitles  = ["果物", "野菜"]
-        searchBar.showsScopeBar = true
-        
         
     }
     
@@ -45,14 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func searchBarSearchButtonClicked(_ searchBar:UISearchBar) {
-        print("検索ボタンがタップ scopeIndex=\(searchBar.selectedScopeButtonIndex)")
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("キャンセルボタンがタップ")
-    }
-    
+   
     // MARK: UITableViewDataSourceプロトコルのメソッド
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

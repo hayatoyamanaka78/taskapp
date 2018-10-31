@@ -30,6 +30,7 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
+        categoryTextField.text = task.category
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,6 +44,7 @@ class InputViewController: UIViewController {
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
             self.realm.add(self.task, update: true)
+            self.task.category = self.categoryTextField.text!
         }
         setNotification(task: task)
         
